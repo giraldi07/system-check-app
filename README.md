@@ -1,4 +1,4 @@
-Here’s a refined version of your `README.md` to make it more visually appealing and structured:
+SYSTEM CHECK APP WITH REACTJS (PWA APP)
 
 ```markdown
 # System Diagnostics App

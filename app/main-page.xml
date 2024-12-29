@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Android Diagnostic Tool" />
+    
+    <ScrollView>
+        <StackLayout padding="10">
+            <Button text="Run Diagnostics" tap="{{ runDiagnostics }}" class="btn btn-primary" />
+            
+            <StackLayout class="diagnostic-section">
+                <Label text="Battery Status" class="section-header" />
+                <Label text="{{ diagnosticResults.battery.status }}" />
+                <Label text="{{ diagnosticResults.battery.health }}" />
+            </StackLayout>
+
+            <StackLayout class="diagnostic-section">
+                <Label text="Storage Status" class="section-header" />
+                <Label text="{{ 'Total: ' + diagnosticResults.storage.total + ' MB' }}" />
+                <Label text="{{ 'Available: ' + diagnosticResults.storage.available + ' MB' }}" />
+                <Label text="{{ 'Used: ' + diagnosticResults.storage.used + ' MB' }}" />
+            </StackLayout>
+
+            <StackLayout class="diagnostic-section">
+                <Label text="Memory Status" class="section-header" />
+                <Label text="{{ 'Total: ' + diagnosticResults.memory.total + ' MB' }}" />
+                <Label text="{{ 'Available: ' + diagnosticResults.memory.available + ' MB' }}" />
+                <Label text="{{ 'Used: ' + diagnosticResults.memory.used + ' MB' }}" />
+            </StackLayout>
+
+            <StackLayout class="diagnostic-section">
+                <Label text="Temperature Status" class="section-header" />
+                <Label text="{{ 'Temperature: ' + diagnosticResults.temperature.temperature + '°C' }}" />
+                <Label text="{{ diagnosticResults.temperature.isOverheating ? 'WARNING: Device is overheating!' : '' }}"
+                       class="warning-text" />
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</Page>
